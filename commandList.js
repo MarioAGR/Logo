@@ -16,7 +16,7 @@ commandLookUp.add(
 );
 
 commandLookUp.add(
-  new Command("bd", [new CommandArg("value", ARGUMENT_TYPES.EXPRESSION)], value => {
+  new Command("bk", [new CommandArg("value", ARGUMENT_TYPES.EXPRESSION)], value => {
     turtle.forward(-value);
   })
 );

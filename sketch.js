@@ -25,7 +25,7 @@ let drawingBounds = new BoundingBox();
 let drawingBoundsFirstPoint = true;
 let centerAnimation = null;
 
-let primary_keywords = ['fd', 'bd', 'rt', 'lt'];
+let primary_keywords = ['fd', 'bk', 'rt', 'lt'];
 let secondary_keywords = ['color', 'colorrgb', 'pensize', 'repeat', 'pu', 'pd'];
 
 function syntaxHighlight(code) {

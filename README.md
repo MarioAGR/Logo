@@ -10,9 +10,9 @@ Repo for implementation of Logo in JavaScript p5
 Moves the turtle forward, in the direction that it's facing, by the specified distance (measured in turtle steps).
 * `fd units`
 
-### Backward
+### Back
 Moves the turtle backward, i.e., exactly opposite to the direction that it's facing, by the specified distance. (The heading of the turtle does not change.)
-* `bd units`
+* `bk units`
 
 ### Right
 Turns the turtle clockwise by the specified angle, measured by default in degrees (1/360 of a circle).
