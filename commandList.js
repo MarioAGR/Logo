@@ -3,6 +3,28 @@
  * that will store all the commands available.
  */
 const commandLookUp = new CommandLookUp();
+const colors = {
+  static: {
+    black: '#000000',
+    blue: '#0000FF',
+    green: '#008000',
+    cyan: '#00FFFF',
+    red: '#FF0000',
+    magenta: '#FF00FF',
+    yellow: '#FFFF00',
+    white: '#FFFFFF'
+  },
+  changable: {
+    brown: '#A52A2A',
+    tan: '#D2B48C',
+    forest: '#228B22',
+    aqua: '#00FFFF',
+    salmon: '#FA8072',
+    purple: '#800080',
+    orange: '#FFA500',
+    grey: '#808080'
+  }
+};
 
 /**
  * To add a new command, just need the name, the arguments,
@@ -121,11 +143,64 @@ commandLookUp.add(
  */
 commandLookUp.add(
   new Command("color", [new CommandArg("color", ARGUMENT_TYPES.STR,(str)=>{
-    return /^#?([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$/.test(str);
+    return /^#?([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3}|([0-9]|1[0-5]))$/.test(str);
   })], color => {
-    // sanity sake let you use hex without the need for #
-    if (color[0] != "#") {
-      color = "#" + color;
+    if (color.length === 1 | color.length === 2) {
+      switch (color) {
+        case '0':
+          color = colors.static.black;
+          break;
+        case '1':
+          color = colors.static.blue;
+          break;
+        case '2':
+          color = colors.static.green;
+          break;
+        case '3':
+          color = colors.static.cyan;
+          break;
+        case '4':
+          color = colors.static.red;
+          break;
+        case '5':
+          color = colors.static.magenta;
+          break;
+        case '6':
+          color = colors.static.yellow;
+          break;
+        case '7':
+          color = colors.static.white;
+          break;
+        case '8':
+          color = colors.changable.brown;
+          break;
+        case '9':
+          color = colors.changable.tan;
+          break;
+        case '10':
+          color = colors.changable.forest;
+          break;
+        case '11':
+          color = colors.changable.aqua;
+          break;
+        case '12':
+          color = colors.changable.salmon;
+          break;
+        case '13':
+          color = colors.changable.purple;
+          break;
+        case '14':
+          color = colors.changable.orange;
+          break;
+        case '15':
+          color = colors.changable.grey;
+          break;
+      }
+    } else {
+      // sanity sake let you use hex without the need for #
+      if (color[0] != "#") {
+        color = "#" + color;
+      }
     }
 
     turtle.strokeColor = color;

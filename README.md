@@ -63,7 +63,32 @@ Changes the angle values to be used as degrees
 * `repeat num [instruction list]`
 
 ### Color
-Sets the pen color given the hexadecimal value in format `#FFF / #FFFFFF`.
+Sets the pen color given the hexadecimal value in format `0-15 / #FFF / #FFFFFF`.
+<details><summary>Colors table</summary>
+<p>
+
+| Number | Color   | Hexadecimal |
+| ------ | ------- | ----------- |
+| 0      | black   | #000000     |
+| 1      | blue    | #0000FF     |
+| 2      | green   | #008000     |
+| 3      | cyan    | #00FFFF     |
+| 4      | red     | #FF0000     |
+| 5      | magenta | #FF00FF     |
+| 6      | yellow  | #FFFF00     |
+| 7      | white   | #FFFFFF     |
+| 8      | brown   | #A52A2A     |
+| 9      | tan     | #D2B48C     |
+| 10     | forest  | #228B22     |
+| 11     | aqua    | #00FFFF     |
+| 12     | salmon  | #FA8072     |
+| 13     | purple  | #800080     |
+| 14     | orange  | #FFA500     |
+| 15     | grey    | #808080     |
+
+</p>
+</details>
+
 * `color hexadecimalValue`
 
 ### Color RGB
